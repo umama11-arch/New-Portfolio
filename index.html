@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My PortFolio</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+
+    <style>
+        body {
+            color: #0f172a;
+            background-color: #ffffff;
+            margin: 0;
+            overflow-x: hidden;
+            font-family: 'Inter',sans-serif;
+        }
+
+
+        h1{
+            color: #ffffff;
+            font-weight: 700;
+        }
+        h3{
+            color: #ffffff;
+        }
+        h5{
+            color: #e5e7eb;
+        }
+
+        a {
+            color: #ffffff;
+        }
+
+        button {
+            background-color: #0d9488;
+        }
+
+        /* {color: ;} */
+        .carousel-video {
+            width: 50%;
+            height: 100%;
+        }
+
+        .navbar {
+            height: 65px;
+            background-color: #ffffff;
+            color: #1e293b;
+            font-size: 20px;
+        }
+        .nav-link:hover{
+            color: #0d9488;
+        }
+
+        .hero {
+            padding-top: 65px;
+            width: 100vw;
+            min-height: 100vh;
+            text-align: center;
+            /* background-image: url("portfolio.jpg"); */
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background:linear-gradient(rgba(15,23,42,0.75),rgba(15,23,42,0.75)),url("portfolio.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            /* background-clip: url("Screenity video - Jan 23, 2026, 9_09 PM.mp4"); */
+            /* background-repeat: no-repeat; */
+
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            margin: 0;
+            gap: 40px;
+        }
+        .btn{
+            background-color: #0d9488;
+            color: #ffffff;
+            font-size: 18px;
+            font-weight: bold;
+            height: 50px;
+            border-radius: 50px;
+            /* border: 2px solid #000000; */
+        }
+        .btn:hover{
+            background-color:#0f766e ;
+            color: #ffffff;
+        }
+       
+        .projectsclass{
+            /* height: 1000px; */
+            min-height: 500px;
+        }
+        .best{
+            min-height: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            /* align-items: center; */
+            gap: 40px;
+        }
+        .best-caption{
+            color: #f35353;
+        }
+
+        .skills{
+            /* height: 500px; */
+            background-color: #f8fafc;
+            display: flex;
+            flex-direction: column;
+            /* justify-content: center; */
+            align-items: center;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .skillsheading{
+            color: #0f172a;
+            font-weight: 700;
+            font-size: 80px;
+        }
+        .row{
+            padding-bottom: 20px;
+        }
+        .skillspara{
+            color: #475569;
+            font-size: 18px;
+            font-weight: 600;
+            max-width: 520px;
+            margin: 16px auto 60px;
+        }
+       .skillscaption{
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+        justify-items: center;
+        gap: 4rem;
+       }
+
+       /* 3d circle k liye 3 important cheezien :  */
+       /* gradient 
+          border-radius
+          shadow+transform */
+        .circle-3d{
+            border-radius: 50%;
+            background: radial-gradient(circle at top left,#5eead4,#0d9488);
+            width: 160px;
+            height: 160px;
+            color: #ffffff;
+            box-shadow:0 18px 30px rgba(13, 148, 136, 0.35),
+            inset -6px -6px 12px rgba(0, 0, 0, 0.2);
+            transition: 0.3s ease;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: large;
+            font-weight: bolder;
+            animation: spin 14s linear infinite;
+            cursor: pointer;
+            transform-style: preserve-3d;
+        }
+        /* .circle-3d span{ */
+            /* animation: counter-spin 14s linear infinite; */
+        /* } */
+        @keyframes counter-spin {
+            from{
+                transform: rotateY(360deg);
+            }
+            to{
+                transform: rotateY(0deg);
+            }
+        }
+        @keyframes spin{
+            from{
+                transform: rotateY(0deg);
+
+            }
+            to{
+                transform: rotateY(180deg);
+            }
+        }
+        .circle-3d:hover{
+            transform: translateY(-10px) scale(1.05);
+            color: #0f172a;
+            animation: none;
+        }
+        .best{
+            background-color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding-top: 70px;
+        }
+        .contactheading{
+            color: #0f172a;
+            font-size: 60px;
+            font-weight: 700;
+        }
+        .best-caption{
+            height: 90%;
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            gap: 40px;
+            /* align-items: center; */
+            width: 97%;
+            background-color: #f5f5f5;
+        }
+        input,textarea{
+            color: #aaaaaa;
+            border: 2px solid #0d9488;
+            border-radius: 5px;
+            padding: 10px;
+            /* height: 40px; */
+            /* width: 200px; */
+        }
+        input,textarea:focus{
+            border: 2px solid #0d9488;
+        }
+        .label{
+            color: #333333;
+            font-weight: 600;
+            font-size: 20px;
+        }
+        textarea{
+            width: 90%;
+        }
+        .selectbest{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 50px;
+            padding-top: 40px;
+        }
+        .select1,.select2{
+            
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .herobttons{
+            display: flex;
+            /* flex-direction: column; */
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+            padding-top: 30px;
+        }
+
+
+
+        @media (max-width:800px) {
+        .skillscaption{
+            grid-template-columns: repeat(2,1fr);
+        }
+        .skillsheading{
+            font-size: 80px;
+        }
+        .skillspara{
+            font-size: 15px;
+        }
+    }
+
+    @media (max-width:480px){
+        .skillscaption{
+            grid-template-columns: 1fr;
+        }
+        .skillspara{
+            font-weight: 600;
+            font-size: 12px;
+        }
+        .circle-3d{
+            animation: spin 2s linear infinite;
+            animation-play-state: running;
+        }
+        .circle-3d span{
+            animation: counter-spin 2s linear infinite;
+            animation-play-state: running;
+        }
+        .circle-3d:hover,.circle-3d:hover span{
+            /* animation-play-state: paused; */
+            animation: none;
+        }
+         @keyframes counter-spin {
+            from{
+                transform: rotate(360deg);
+            }
+            to{
+                transform: rotate(0deg);
+            }
+        }
+
+        @keyframes spin {
+            from{
+                transform: rotate(0deg);
+            }
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        .skillsheading{
+            font-size: 50px;
+        }
+    }
+
+    
+ /* ===============================
+   PROJECTS SECTION – FULL CSS
+   =============================== */
+
+.projectsclass{
+  background-color: #ffffff;
+  padding: 80px 20px;
+}
+
+/* heading */
+.projectcaption{
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.projectheading{
+  color: #0f172a;
+  font-weight: 700;
+}
+
+.projecttext{
+  color: #64748b;
+}
+
+/* carousel base */
+#projectCarousel{
+  max-width: 1150px;
+  margin: auto;
+}
+
+.carousel-inner{
+  overflow: hidden;
+}
+
+/* one slide */
+.carousel-item{
+  background-color: #f8fafc;
+  padding: 50px;
+  border-radius: 20px;
+}
+
+/* layout inside slide */
+.carousel-content{
+    display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+/* video + text row */
+.carousel-top{
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+/* video wrapper */
+.video_wrapper{
+  width: 50%;
+}
+
+.video_wrapper video{
+  width: 100%;
+  display: block;
+  border-radius: 14px;
+  border: 3px solid #0d9488;
+  padding: 0;
+  margin: 0;
+}
+
+/* text side */
+.carouselcaption{
+  width: 50%;
+}
+
+.carouselheading{
+    color: #0f172a;
+    font-weight: 700;
+}
+
+.carouseltext{
+    color: #475569;
+  font-size: 0.95rem;
+  margin-bottom: 12px;
+}
+
+/* tech stack pills */
+.techstack{
+    display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.techstack span{
+  background-color: #e2e8f0;
+  color: #0f172a;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+/* buttons */
+.carousel-content .herobuttons{
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* arrows */
+.custom-arrow{
+  width: 45px;
+  height: 45px;
+  background-color: #0d9488;
+  border-radius: 50%;
+  color: #ffffff;
+  font-size: 28px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 1;
+}
+
+.carousel-control-prev{
+  left: -60px;
+}
+
+.carousel-control-next{
+  right: -60px;
+}
+
+/* indicators */
+.carousel-indicators{
+  bottom: -40px;
+}
+
+.carousel-indicators button{
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #94a3b8;
+}
+
+.carousel-indicators .active{
+  background-color: #0d9488;
+}
+
+/* ===============================
+   RESPONSIVE
+   =============================== */
+
+@media (max-width: 900px){
+  .carousel-top{
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .video_wrapper,
+  .carouselcaption{
+    width: 100%;
+  }
+
+  .carousel-item{
+    padding: 30px 20px;
+  }
+
+  .carousel-control-prev{
+    left: 10px;
+  }
+
+  .carousel-control-next{
+    right: 10px;
+  }
+}
+
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg fixed-top">
+        <div class="container">
+            <a href="#" class="navbar-brand">UMAMA</a>
+            <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#nav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="nav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a href="#skillsid" class="nav-link">Skills</a></li>
+                    <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+                    <li class="nav-item"><a href="#hero" class="nav-link">About</a></li>
+                    <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" id="hero">
+        <div class="row">
+            <div class="hero-caption">
+                <h1 class="heroheading">Your new website could look this GOOD</h1>
+                <h5 class="heropara">I build sleek,high converting websites that turns visitors into customers.</p>
+                <h3>Spots for new Projects are Limited.</h5>
+            </div>
+
+        </div>
+        <div class="herobuttons">
+
+            <button class="btn px-5 pro">Projects</button>
+            <button class="btn px-5 hire">Hire Me</button>
+        </div>
+        </section>
+
+   
+                          <section class="projectsclass" id="projects">
+  <div class="projectcaption text-center mb-5">
+    <h1 class="projectheading">Selected Projects</h1>
+    <h3 class="projecttext">Real Projects. Real Results. Built to Convert.</h3>
+  </div>
+
+  <div id="projectCarousel" class="carousel slide" data-bs-ride="false">
+
+    <!-- INDICATORS -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#projectCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <div class="carousel-inner">
+
+      <!-- SLIDE 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-content">
+
+          <div class="carousel-top">
+            <div class="video_wrapper">
+              <video muted loop preload="metadata">
+                <source src="Screenity video - Jan 23, 2026, 9_09 PM.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="carouselcaption">
+              <h5 class="carouselheading">Education Website</h5>
+              <p class="carouseltext">Designed to increase demo class bookings.</p>
+
+              <div class="techstack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>Bootstrap</span>
+                <span>JS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="herobuttons">
+            <button class="edu btn px-5">View Project</button>
+            <button class="hire btn px-5">Hire Me</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SLIDE 2 -->
+      <div class="carousel-item">
+        <div class="carousel-content">
+
+          <div class="carousel-top">
+            <div class="video_wrapper">
+              <video muted loop preload="metadata">
+                <source src="Screenity video - Jan 9, 2026, 7_50 AM.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="carouselcaption">
+              <h5 class="carouselheading">Portfolio Website</h5>
+              <p class="carouseltext">High-impact personal brand website.</p>
+
+              <div class="techstack">
+                <span>HTML</span>
+                <span>CSS</span>
+                <!-- <span>Bootstrap</span> -->
+                <span>JS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="herobuttons">
+            <button class="port btn px-5">View Project</button>
+            <button class="hire btn px-5">Hire Me</button>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- SLIDE 3 -->
+      <div class="carousel-item">
+        <div class="carousel-content">
+
+          <div class="carousel-top">
+            <div class="video_wrapper">
+              <video muted loop preload="metadata">
+                <source src="Resturaunt.mp4" type="video/mp4">
+              </video>
+            </div>
+
+            <div class="carouselcaption">
+              <h5 class="carouselheading">Resturaunt Website</h5>
+              <p class="carouseltext">Conversion-focused landing experience.</p>
+
+              <div class="techstack">
+                <span>HTML</span>
+                <span>Bootstrap</span>
+                <span>React</span>
+                <span>JS</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="herobuttons">
+            <button class="btn px-5 res" >View Project</button>
+            <button class="hire btn px-5">Hire Me</button>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+    <!-- CUSTOM ARROWS -->
+    <button class="carousel-control-prev custom-arrow" type="button" data-bs-target="#projectCarousel" data-bs-slide="prev">
+      ‹
+    </button>
+    <button class="carousel-control-next custom-arrow" type="button" data-bs-target="#projectCarousel" data-bs-slide="next">
+      ›
+    </button>
+
+  </div>
+</section>
+
+
+    <section class="skills" id="skillsid">
+        <div class="container">
+            <div class="row">
+                    <h2 class="skillsheading">Skills</h2>
+                    <p class="skillspara">No buzzwords ,just skills I use to build modern , working Websites.</p>
+                    </div>
+               <div class="skillscaption">
+                   <div class="circle-3d"><span>Html</span></div>
+                   <div class="circle-3d"><span>CSS</span></div>
+                   <div class="circle-3d"><span>JS</span></div>
+                   <div class="circle-3d"><span>Bootstrap</span></div>
+                   <div class="circle-3d"><span>React</span></div>
+                   <div class="circle-3d"><span>Responsive Design</span></div>
+                </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="best " id="contact">
+            <div class="contact"><h1 class="contactheading">Hit Me Up</h1></div>
+        <div class="best-caption">
+            <form action="">
+                <div class="row">
+                    <div class="col-md-6"><input placeholder="Enter Name" type="text" Name="Name"></div>
+                    <div class="col-md-6"><input placeholder="Enter Email" type="text" Name="Name"></div>
+                    <!-- <div class="col-md-6"><input type="text" Name="Name"></div> -->
+                </div>
+                <div class="rw">
+                    <textarea placeholder="Enter your Problem/Your Idea" name="Query" id="" ADD></textarea>
+                </div>
+
+
+                <div class="row selectbest">
+                    <div class="select1">
+
+                        <p class="label">Which Website do you like ?</h3>
+                            <div class="">
+                    <select class="form-control">
+                        <option>Education Website</option>
+                        <option>Portfolio Website </option>
+                        <option>Dress Website</option>
+                        <option>Landing Page </option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="select2">
+                <p class="label">Which Website u wanna make ? </h5>
+                    <div class="">
+                    <select class="form-control">
+                        
+                        <option>Education Website</option>
+                        <option>Class 10</option>
+                        <option>Class 11</option>
+                        <option>Class 12</option>
+                    </select>
+                </div>
+            </div>
+            </div>
+                <div class="herobttons">
+                    <button class="btn px-5">Submit</button>
+                    <button class="btn px-5 hire">Hire me</button>
+                </div>
+        </form>
+            </div>
+        </section>
+
+        <footer class="footer">
+            
+        </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+<script>
+
+  const videos = document.querySelectorAll(".video_wrapper video");
+
+  videos.forEach(video => {
+    video.addEventListener("mouseenter", () => video.play());
+    video.addEventListener("mouseleave", () => video.pause());
+  });
+
+  const carousel = document.getElementById("projectCarousel");
+  carousel.addEventListener("slide.bs.carousel", () => {
+    videos.forEach(video => video.pause());
+  });
+
+
+  const btn=document.querySelector('.pro')
+  const prjects=document.getElementById('projects')
+
+  btn.addEventListener("click",()=>{
+    prjects.scrollIntoView();
+
+  })
+  const res=document.querySelector('.res')
+  res.addEventListener('click',()=>{
+    // alert("k")
+    window.open('https://umama11-arch.github.io/restaurant-website/','_blank')
+})
+
+const port=document.querySelector('.port')
+port.addEventListener('click',()=>{
+  window.open('https://umama11-arch.github.io/Portfolio-/','_blank')
+})
+
+const edu=document.querySelector('.edu')
+edu.addEventListener('click',()=>{
+  window.open('https://umama11-arch.github.io/education/','_blank')
+})
+
+const hire=document.querySelectorAll('.hire')
+hire.forEach(function(e){
+  e.addEventListener('click',function(){
+    window.open('https://www.freelancer.com/u/Umamaishaq?frm=Umamaishaq&sb=t','_blank')
+  })
+})
+</script>
+</html>
